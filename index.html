@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio - Cafetería</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+        .poppins-regular {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+        }
+        .unbounded-apadrina {
+            font-family: "Unbounded", sans-serif;
+            font-weight: 700;
+        }
+        /* Footer */
+footer {
+    background-color: #6f4e37;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer h2 {
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.social-icons a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2);
+}
+    </style>
+</head>
+
+<body class="bg-[#96c2b0] text-[#333] font-sans">
+  <div class="fixed top-0 w-full bg-[#6f4e37] text-[#bfa75c] font-bold p-4 z-20">
+    <header>
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center p-2">
+            <div class="flex items-center mb-4 sm:mb-0">
+                <img src="img/logo.png" alt="Logo" class="h-16 w-auto ml-4" />
+                <img src="/imagenes/menu.png" alt="Menu" class="w-10 h-10 sm:hidden" onclick="toggleMenu()"/> <!-- Imagen del menú en móviles -->
+            </div>
+
+            <nav id="nav-menu" class="hidden sm:flex space-x-4">
+                <a href="index.html" class="block text-base px-2 py-2 hover:text-amber-100 focus:text-cyan-500 underline decoration-amber-500 font-semibold">INICIO</a>
+                <a href="Menu principal.php" class="block px-2 py-2 hover:text-amber-100 focus:text-cyan-500 underline decoration-amber-500 font-semibold">MENÚ</a>
+                <a href="pedidos.php" class="block px-2 py-2 hover:text-amber-100 focus:text-cyan-500 underline decoration-amber-500 font-semibold">PEDIDOS</a>
+                <a href="Nosotros.php" class="block px-2 py-2 hover:text-amber-100 focus:text-cyan-500 underline decoration-amber-500 font-semibold">NOSOTROS</a>
+                <a href="promos.php" class="block px-2 py-2 hover:text-amber-100 focus:text-cyan-500 underline decoration-amber-500 font-semibold">PROMOCIONES</a>
+
+            </nav>
+        </div>
+    </header>
+</div>
+  <main class="mb-4 mt-40 flex flex-col items-center px-4 py-8">
+    <h1 class="text-center text-4xl sm:text-6xl unbounded-apadrina mb-12">¡Hola! Bienvenido a cafeteria Queen
+    </h1>
+    <div class="relative w-full max-w-4xl bg-gray-300 mb-4 overflow-hidden">
+        <img id="carousel-image" src="img/inicio.jpg" alt="imagen" class="w-full h-auto object-cover transition-opacity duration-500">
+    </div>
+    <!-- Aquí se define los puntos dinamicos al cambio de imagen -->
+    <div class="flex space-x-2 mb-6">
+        <span class="dot h-2 w-2 bg-gray-400 rounded-full cursor-pointer transition duration-300"></span>
+        <span class="dot h-2 w-2 bg-gray-400 rounded-full cursor-pointer transition duration-300"></span>
+        <span class="dot h-2 w-2 bg-gray-400 rounded-full cursor-pointer transition duration-300"></span>
+    </div>
+    <!-- Descripción de la página -->
+    <p class="text-center text-4xl sm:text-4xl unbounded-apadrina mb-8">¡Agradecemos tu preferencia y apoyo a nuestro negocio! ❤️</p>
+    <p class="poppins-regular sm:text-2xl text-justify mb-4">Contamos con desayunos, bebidas a base de cafe, frappes, snacks, crepas, waffles, Smoothies y malteadas.</p>
+    <p class="poppins-regular sm:text-2xl text-justify mb-4">Siguenos en nuestras redes para enterarte de todo, ademas de los cambios de horario, nuevos productos.
+    </p>
+    <p class="poppins-regular sm:text-2xl text-justify mb-4"> Contactanos via whatsApp tenemos servicio a domicilio y de comedor. </p>
+</main>
+
+  <footer class="bg-[#6f4e37] text-white text-center py-10 px-5 mt-10">
+    <h2 class="italic text-4xl mb-2 font-bold">Contacto</h2>
+    <p class="italic text-xl mb-4">Contactanos via whatsApp o visita nuestro local, contamos con servicio a domicilio:</p>
+    <p class="italic text-xl mb-4">Teléfono: <strong>99-11-13-73-05</strong></p>
+
+    <h3 class="italic text-2xl mb-4">Síguenos en nuestras redes</h3>
+    <div class="flex justify-center gap-6 mt-4">
+      <a href="https://www.facebook.com/share/16otKKH6g7/" target="_blank">
+        <img src="img/facebook.png" alt="Facebook" class="w-10 h-10 hover:scale-110 transition-transform duration-300" />
+      </a>
+      <a href="https://www.instagram.com/cafeteriaqueen_?igsh=OGZoaGJ0aG9uaWNh" target="_blank">
+        <img src="img/instagram.png" alt="Instagram" class="w-10 h-10 hover:scale-110 transition-transform duration-300" />
+      </a>
+      <a href="https://www.tiktok.com/@cafeteria_queen?is_from_webapp=1&sender_device=pc" target="_blank">
+        <img src="img/tiktok.png" alt="TikTok" class="w-10 h-10 hover:scale-110 transition-transform duration-300" />
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const images = [
+        'img/inicio2.jpg',
+        'img/inicio.jpg',
+        'img/inicio1.jpg'
+    ];
+    let currentIndex = 0;
+
+    const carouselImage = document.getElementById('carousel-image');
+    const dots = document.querySelectorAll('.dot');
+
+    function updateCarousel() {
+        // Cambiar imagen
+        carouselImage.src = images[currentIndex];
+
+        // Actualizar puntos
+        dots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.classList.remove('bg-gray-400');
+                dot.classList.add('bg-black');
+            } else {
+                dot.classList.remove('bg-black');
+                dot.classList.add('bg-gray-400');
+            }
+        });
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateCarousel();
+    }
+
+    // Cambiar la imagen cada 4 segundos
+    setInterval(nextImage, 4000);
+
+    // Inicialización
+    updateCarousel();
+</script>
+</body>
+</html>

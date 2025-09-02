@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desayunos - Cafetería</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .fredericka-the-great-regular {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+    .vina-sans-regular {
+  font-family: "Vina Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.poppins-regular {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+    }
+    </style>
+  </head>
+  <body class="bg-black text-[#fffaf0] font-sans">
+    <!-- Header y Navegación -->
+    <header class="bg-[#6f4e37] py-4">
+      <div class="fixed top-0 w-full bg-[#6f4e37] text-[#bfa75c] font-bold p-4 z-20">
+    <header>
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center p-2">
+            <div class="flex items-center mb-4 sm:mb-0">
+                <img src="img/logo.png" alt="Logo" class="h-16 w-auto ml-4" />
+                <img src="/imagenes/menu.png" alt="Menu" class="w-10 h-10 sm:hidden" onclick="toggleMenu()"/> <!-- Imagen del menú en móviles -->
+            </div>
+
+            <nav id="nav-menu" class="hidden sm:flex space-x-4">
+                <a href="index.html" class="block text-base px-2 py-2 hover:text-amber-100 focus:text-cyan-500 underline decoration-amber-500 font-semibold">INICIO</a>
+                <a href="Menu principal.php" class="block px-2 py-2 hover:text-amber-100 focus:text-cyan-500 underline decoration-amber-500 font-semibold">MENÚ</a>
+                <a href="pedidos.php" class="block px-2 py-2 hover:text-amber-100 focus:text-cyan-500 underline decoration-amber-500 font-semibold">PEDIDOS</a>
+                <a href="Nosotros.php" class="block px-2 py-2 hover:text-amber-100 focus:text-cyan-500 underline decoration-amber-500 font-semibold">NOSOTROS</a>
+                <a href="promos.php" class="block px-2 py-2 hover:text-amber-100 focus:text-cyan-500 underline decoration-amber-500 font-semibold">PROMOCIONES</a>
+
+            </nav>
+        </div>
+    </header>
+</div>
+
+    <!-- Sección del Menú -->
+    <section class="mb-4 mt-40 bg-[#111] text-center py-12 px-4">
+      <h1 class="fredericka-the-great-regular text-8xl text-[#d8cfc0] mb-4">Desayunos</h1>
+      <p class="poppins-regular text-4xl text-[#ccc] mb-8">¿Ya probaste nuestros deliciosos sandwiches🥪 y burritas?</p>
+
+      <!-- Sección Burritas -->
+        <div class="mb-10">
+        <h2 class="vina-sans-regular text-8xl text-[#96c2b0] font-bold mb-6">"BURRITAS"</h2>
+        <div class="flex flex-wrap justify-center gap-6">
+          <div class="bg-[#1f1f1f] w-56 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition">
+            <img src="img/Desayuno3.jpg" alt="3 burritas" class="w-full h-44 object-cover" />
+            <h2 class="bg-[#bfa75c] text-black font-bold text-lg py-2">3 burritas por $36.00</h2>
+            <div class="p-3">
+              <input type="number" min="1" id="cantidad-burrita1" value="1" class="text-black w-full rounded mb-2 px-2" />
+              <button onclick="agregarProducto('burrita1')" class="bg-[#bfa75c] text-black font-bold w-full py-1 rounded">Añadir</button>
+            </div>
+          </div>
+
+          <div class="bg-[#1f1f1f] w-56 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition">
+            <img src="img/desayuno4.jpg" alt="5 burritas" class="w-full h-44 object-cover" />
+            <h2 class="bg-[#bfa75c] text-black font-bold text-lg py-2">5 burritas por $50.00</h2>
+            <div class="p-3">
+              <input type="number" min="1" id="cantidad-burrita2" value="1" class="text-black w-full rounded mb-2 px-2" />
+              <button onclick="agregarProducto('burrita2')" class="bg-[#bfa75c] text-black font-bold w-full py-1 rounded">Añadir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="vina-sans-regular text-8xl text-[#96c2b0] font-bold mb-6">"sandwiches🥪"</h2>
+        <div class="flex flex-wrap justify-center gap-6">
+          <div class="bg-[#1f1f1f] w-56 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition">
+            <img src="img/desayuno2.jpg" alt="Sandwich sencillo" class="w-full h-44 object-cover" />
+            <h2 class="bg-[#bfa75c] text-black font-bold text-lg py-2">Sandwich sencillo $20.00</h2>
+            <div class="p-3">
+              <input type="number" min="1" id="cantidad-sandwich1" value="1" class="text-black w-full rounded mb-2 px-2" />
+              <button onclick="agregarProducto('sandwich1')" class="bg-[#bfa75c] text-black font-bold w-full py-1 rounded">Añadir</button>
+            </div>
+          </div>
+
+          <div class="bg-[#1f1f1f] w-56 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition">
+            <img src="img/desayuno.jpg" alt="Sandwich chorizo y tocino" class="w-full h-44 object-cover" />
+            <h2 class="bg-[#bfa75c] text-black font-bold text-lg py-2">Chorizo y Tocino $30.00</h2>
+            <div class="p-3">
+              <input type="number" min="1" id="cantidad-sandwich2" value="1" class="text-black w-full rounded mb-2 px-2" />
+              <button onclick="agregarProducto('sandwich2')" class="bg-[#bfa75c] text-black font-bold w-full py-1 rounded">Añadir</button>
+            </div>
+          </div>
+
+          <div class="bg-[#1f1f1f] w-56 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition">
+            <img src="img/desayuno6.jpg" alt="Combo sandwich" class="w-full h-44 object-cover" />
+            <h2 class="bg-[#bfa75c] text-black font-bold text-lg py-2">Combo con fruta $35.00</h2>
+            <div class="p-3">
+              <input type="number" min="1" id="cantidad-sandwich3" value="1" class="text-black w-full rounded mb-2 px-2" />
+              <button onclick="agregarProducto('sandwich3')" class="bg-[#bfa75c] text-black font-bold w-full py-1 rounded">Añadir</button>
+            </div>
+          </div>
+
+          <div class="bg-[#1f1f1f] w-56 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition">
+            <img src="img/desayuno7.jpg" alt="Sandwich vegetales" class="w-full h-44 object-cover" />
+            <h2 class="bg-[#bfa75c] text-black font-bold text-lg py-2">Vegetales (3 panes) $35.00</h2>
+            <div class="p-3">
+              <input type="number" min="1" id="cantidad-sandwich4" value="1" class="text-black w-full rounded mb-2 px-2" />
+              <button onclick="agregarProducto('sandwich4')" class="bg-[#bfa75c] text-black font-bold w-full py-1 rounded">Añadir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#6f4e37] text-white text-center py-10 px-5 mt-10">
+    <h2 class="italic text-4xl mb-2 font-bold">Contacto</h2>
+    <p class="italic text-xl mb-4">Contactanos via whatsApp o visita nuestro local, contamos con servicio a domicilio:</p>
+    <p class="italic text-xl mb-4">Teléfono: <strong>99-11-13-73-05</strong></p>
+
+    <h3 class="italic text-2xl mb-4">Síguenos en nuestras redes</h3>
+    <div class="flex justify-center gap-6 mt-4">
+      <a href="https://www.facebook.com/share/16otKKH6g7/" target="_blank">
+        <img src="img/facebook.png" alt="Facebook" class="w-10 h-10 hover:scale-110 transition-transform duration-300" />
+      </a>
+      <a href="https://www.instagram.com/cafeteriaqueen_?igsh=OGZoaGJ0aG9uaWNh" target="_blank">
+        <img src="img/instagram.png" alt="Instagram" class="w-10 h-10 hover:scale-110 transition-transform duration-300" />
+      </a>
+      <a href="https://www.tiktok.com/@cafeteria_queen?is_from_webapp=1&sender_device=pc" target="_blank">
+        <img src="img/tiktok.png" alt="TikTok" class="w-10 h-10 hover:scale-110 transition-transform duration-300" />
+      </a>
+    </div>
+  </footer>
+  <script>
+  const productos = [
+    { id: 'burrita1', nombre: '3 burritas', precio: 36, imagen: 'Desayuno3.jpg' },
+    { id: 'burrita2', nombre: '5 burritas', precio: 50, imagen: 'desayuno4.jpg' },
+    { id: 'sandwich1', nombre: 'Sandwich sencillo', precio: 20, imagen: 'desayuno2.jpg' },
+    { id: 'sandwich2', nombre: 'Sandwich chorizo y tocino', precio: 30, imagen: 'desayuno.jpg' },
+    { id: 'sandwich3', nombre: 'Combo sandwich con fruta', precio: 35, imagen: 'desayuno6.jpg' },
+    { id: 'sandwich4', nombre: 'Sandwich vegetales (3 panes)', precio: 35, imagen: 'desayuno7.jpg' }
+  ];
+
+  function agregarProducto(id) {
+    const cantidad = parseInt(document.getElementById(`cantidad-${id}`).value);
+    const producto = productos.find(p => p.id === id);
+
+    if (producto && cantidad > 0) {
+      const precioTotal = cantidad * producto.precio;
+      console.log("Producto añadido:", {
+        nombre: producto.nombre,
+        cantidad,
+        precio: precioTotal
+      });
+
+      // Enviar al servidor para guardar en la base de datos
+      fetch('guardar_pedido.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: `producto=${encodeURIComponent(producto.nombre)}&cantidad=${cantidad}&precio=${producto.precio}`
+      })
+      .then(response => response.text())
+      .then(data => {
+        alert(data); // Puedes usar un modal o alert personalizado si quieres
+      })
+      .catch(error => {
+        console.error('Error al enviar el pedido:', error);
+        alert("Hubo un error al guardar el pedido.");
+      });
+    } else {
+      alert("Por favor, selecciona una cantidad válida.");
+    }
+  }
+</script>
+  </body>
+</html>

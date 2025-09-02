@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smoothies - Cafetería Queen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fredericka-the-great-regular {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+    .vina-sans-regular {
+  font-family: "Vina Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.poppins-regular {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body class="bg-black text-[#fffaf0] font-sans">
+  <!-- Header -->
+   <header class="bg-[#6f4e37] py-4">
+      <div class="fixed top-0 w-full bg-[#6f4e37] text-[#bfa75c] font-bold p-4 z-20">
+    <header>
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center p-2">
+            <div class="flex items-center mb-4 sm:mb-0">
+                <img src="img/logo.png" alt="Logo" class="h-16 w-auto ml-4" />
+                <img src="/imagenes/menu.png" alt="Menu" class="w-10 h-10 sm:hidden" onclick="toggleMenu()"/> <!-- Imagen del menú en móviles -->
+            </div>
+
+            <nav id="nav-menu" class="hidden sm:flex space-x-4">
+                <a href="index.html" class="block text-base px-2 py-2 hover:text-amber-100 focus:text-cyan-500 underline decoration-amber-500 font-semibold">INICIO</a>
+                <a href="Menu principal.php" class="block px-2 py-2 hover:text-amber-100 focus:text-cyan-500 underline decoration-amber-500 font-semibold">MENÚ</a>
+                <a href="pedidos.php" class="block px-2 py-2 hover:text-amber-100 focus:text-cyan-500 underline decoration-amber-500 font-semibold">PEDIDOS</a>
+                <a href="Nosotros.php" class="block px-2 py-2 hover:text-amber-100 focus:text-cyan-500 underline decoration-amber-500 font-semibold">NOSOTROS</a>
+                <a href="promos.php" class="block px-2 py-2 hover:text-amber-100 focus:text-cyan-500 underline decoration-amber-500 font-semibold">PROMOCIONES</a>
+
+            </nav>
+        </div>
+    </header>
+</div>
+
+  <!-- Sección Smoothies -->
+  <section class="mb-4 mt-40 bg-[#111] text-center py-12 px-4">
+    <h1 class="fredericka-the-great-regular text-6xl text-[#d8cfc0] font-bold mb-2">Smoothies</h1>
+    <h3 class=".vina-sans-regular text-4xl text-[#ccc] mb-8">Sabor tropical en un vaso. ¡Prueba nuestros smoothies y siente el paraíso!</h3>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+      <!-- Productos -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#6f4e37] text-white text-center py-10 px-5 mt-10">
+    <h2 class="italic text-4xl mb-2 font-bold">Contacto</h2>
+    <p class="italic text-xl mb-4">Contactanos via whatsApp o visita nuestro local, contamos con servicio a domicilio:</p>
+    <p class="italic text-xl mb-4">Teléfono: <strong>99-11-13-73-05</strong></p>
+
+    <h3 class="italic text-2xl mb-4">Síguenos en nuestras redes</h3>
+    <div class="flex justify-center gap-6 mt-4">
+      <a href="https://www.facebook.com/share/16otKKH6g7/" target="_blank">
+        <img src="img/facebook.png" alt="Facebook" class="w-10 h-10 hover:scale-110 transition-transform duration-300" />
+      </a>
+      <a href="https://www.instagram.com/cafeteriaqueen_?igsh=OGZoaGJ0aG9uaWNh" target="_blank">
+        <img src="img/instagram.png" alt="Instagram" class="w-10 h-10 hover:scale-110 transition-transform duration-300" />
+      </a>
+      <a href="https://www.tiktok.com/@cafeteria_queen?is_from_webapp=1&sender_device=pc" target="_blank">
+        <img src="img/tiktok.png" alt="TikTok" class="w-10 h-10 hover:scale-110 transition-transform duration-300" />
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const productos = [
+      { id: 'smoothie1', nombre: 'Mango con chamoy', precio: 45, imagen: 'img/mango.jpg' },
+      { id: 'smoothie2', nombre: 'Piña con chamoy', precio: 45, imagen: 'img/piña.jpg' },
+      { id: 'smoothie3', nombre: 'Fresa con chamoy', precio: 45, imagen: 'img/frescha.jpg' },
+      { id: 'smoothie4', nombre: 'Piña colada', precio: 45, imagen: 'img/piñas.jpg' },
+      { id: 'smoothie5', nombre: 'Fresa', precio: 45, imagen: 'img/fresa.jpg' }
+    ];
+
+    const container = document.querySelector('section .grid');
+
+    productos.forEach(producto => {
+      const card = document.createElement('div');
+      card.className = "bg-[#1f1f1f] w-56 mx-auto rounded-xl shadow-lg overflow-hidden hover:scale-105 transition";
+      card.innerHTML = `
+        <img src="${producto.imagen}" alt="${producto.nombre}" class="w-full h-44 object-cover" />
+        <h2 class="bg-[#bfa75c] text-black font-bold text-lg py-2">${producto.nombre} - $${producto.precio.toFixed(2)}</h2>
+        <div class="p-3">
+          <input type="number" min="1" id="cantidad-${producto.id}" value="1" class="text-black w-full rounded mb-2 px-2" />
+          <button onclick="agregarProducto('${producto.id}')" class="bg-[#bfa75c] text-black font-bold w-full py-1 rounded">Añadir</button>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+
+    function agregarProducto(id) {
+      const cantidad = parseInt(document.getElementById(`cantidad-${id}`).value);
+      const producto = productos.find(p => p.id === id);
+
+      if (producto && cantidad > 0) {
+        fetch('guardar_pedido.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `producto=${encodeURIComponent(producto.nombre)}&cantidad=${cantidad}&precio=${producto.precio}`
+        })
+        .then(res => res.text())
+        .then(data => alert(data))
+        .catch(err => {
+          console.error('Error:', err);
+          alert('Hubo un error al guardar el pedido.');
+        });
+      } else {
+        alert("Selecciona una cantidad válida.");
+      }
+    }
+  </script>
+</body>
+</html>
